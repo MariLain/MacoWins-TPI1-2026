@@ -52,7 +52,7 @@ pueden ir cambiarndo de precio en el tiempo, asi que cree ItemPrenda para que cu
 ### Local ->* Venta
 Esta solucion es la unica que se me ocurrio para poder juntar las ventas en un lugar, que a su vez me permita que macowins tenga mas de un local
 
-![img_2.png](img_2.png))
+![img_3.png](img_3.png)
 
 ### ItemPrenda 
 ```java
@@ -74,11 +74,7 @@ public class ItemPrenda {
 public class Venta {
   protected Collection<ItemPenda> itemsPrendas;
   protected LocalDate fecha;
-
-  public int cantidadDePrendas() {
-    return itemsPrendas.stream().map(ItemPrenda::getCantidad).sum();
-  }
-
+  
   public LocalDate getFecha() {
     return fecha;
   }
@@ -112,6 +108,9 @@ public class Local {
 
 ## VentaTarjeta  -|> Venta
 Esta solucion es la unica que se me ocurrio para poder juntar las ventas en un lugar, que a su vez me permita que macowins tenga mas de un local 
+Me parecio que no era necesario implementar "Pago en Efectivo"
+
+![img_2.png](img_2.png)
 
 ### VentaTarjeta
 ```java
@@ -133,3 +132,5 @@ public class VentaTarjeta extends Venta {
 }
 
 ```
+## Diagrama de Clases:
+![img_4.png](TP0.png)

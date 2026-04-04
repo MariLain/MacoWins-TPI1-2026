@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Prenda
+interface Estado
+class Nueva
+class Promocion
+class Liquidacion
+
+Estado <|.. Nueva
+Estado <|.. Promocion
+Estado <|.. Liquidacion
+Prenda -R-> Estado
+
+interface Estado {
++precio(precioBase)
+}
+class Nueva {
++precio(precioBase)
+}
+class Promocion {
+descuento : double
++double precio(precioBase)
+}
+class Liquidacion {
+ +precio(precioBase)
+}
+
+class Prenda {
+- estado : Estado
+- tipo : String
+-precioBase : double
+ +double precio()
+}
+
+class ItemPrenda {
+-precio : double
+-cantidad : int
++getPrecio()
++getCantidad()
+}
+
+class Venta {
+-itemPrendas : List<ItemPrenda>
+-fecha : LocalDate
++cantidadPrendas()
++importe()
+}
+
+class Local {
+-ventas : List<Venta>
+-fecha : LocalDate
++ganciasDelDia()
++importe()
+}
+
+ItemPrenda -UP-> Prenda
+Venta -UP->  ItemPrenda
+Local -UP->"*" Venta
+
+class VentaTarjeta {
+-cuotas : int
+-coeficiente
++importe()
+}
+
+VentaTarjeta -L-|> Venta
+
+@enduml
