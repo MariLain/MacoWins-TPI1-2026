@@ -133,4 +133,4 @@ public class VentaTarjeta extends Venta {
 
 ```
 ## Diagrama de Clases:
-![img_4.png](TP0.png)
+![img_4.png](img_4.png)

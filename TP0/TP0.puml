@@ -30,7 +30,7 @@ class Prenda {
 - estado : Estado
 - tipo : String
 -precioBase : double
- +double precio()
+ +precio()
 }
 
 class ItemPrenda {
@@ -43,13 +43,11 @@ class ItemPrenda {
 class Venta {
 -itemPrendas : List<ItemPrenda>
 -fecha : LocalDate
-+cantidadPrendas()
 +importe()
 }
 
 class Local {
 -ventas : List<Venta>
--fecha : LocalDate
 +ganciasDelDia()
 +importe()
 }
